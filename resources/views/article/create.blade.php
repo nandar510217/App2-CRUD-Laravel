@@ -16,5 +16,5 @@
             </div>
             <button class="btn btn-sm btn-primary">Submit</button>
         </form>
-        </div>
+    </div>
 @endsection

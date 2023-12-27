@@ -56,8 +56,20 @@ class App2Contoller extends Controller
 
     //edit
     public function edit($id) {
-        dd($id);
+        // dd($id);
+        $article = Article::find($id);
+        return view('article.edit', compact('article'));
+    }
+
+    //update
+    public function update(Request $request, $id){
+        $article = Article::findOrfail($id);
+        $article->update([
+            'title' => $request->title,
+            'content' => $request->content
+        ]);
         return redirect('article');
+        // return view('article.index'); false
     }
     
 }

@@ -19,7 +19,7 @@
                         <td>{{$article->title}}</td>
                         <td>{{ $article->content }}</td>
                         <td class="">
-                            <a href="" class="btn btn-sm btn-primary">Edit</a>
+                            <a href="{{ url('article/' .$article->id. '/edit')}}" class="btn btn-sm btn-primary">Edit</a>
                             <form action="{{ url('article/' .$article->id) }}" method="post">
                                 @csrf @method('delete')
                                 <button class="btn btn-sm btn-danger">Delete</button>

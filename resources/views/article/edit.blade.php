@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <a href="{{ url('article') }}" class="btn btn-sm btn-primary my-3"> << Back</a>
-        <h4>Create Article</h4>
+        <h4>Edit Article</h4>
         <form action="{{ url('article') }}" method="post">
             @csrf
             <div class="my-3">

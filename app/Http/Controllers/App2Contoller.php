@@ -24,21 +24,40 @@ class App2Contoller extends Controller
     }
 
 
+    //read article
     public function index() {
-        //read article
         $articles = Article::all();
         return view('article.index', compact('articles'));
-
-        
+        // return view('article.index')->with('articles', $articles);
+        // return view('article.index')->withArticles($articles); 
     }
 
+    //delete article
     public function delete($id) {
         Article::find($id)->delete();
-        // dd('$articles');
         return back();   
      }
 
+     //go to create form
     public function create() {
        return view('article.create');   
     }
+
+    //create
+    public function store(Request $request) {
+        Article::create([
+            'title' => $request->title,
+            'content' => $request->content
+            //'title' => request('title'),
+            // 'content' => request('content')
+        ]);
+        return redirect('article');
+    }
+
+    //edit
+    public function edit($id) {
+        dd($id);
+        return redirect('article');
+    }
+    
 }

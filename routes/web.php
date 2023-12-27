@@ -17,6 +17,14 @@ Route::post('login-user',[App2Contoller::class,'login']);
 //Article CRUD
 Route::get('article',[App2Contoller::class,'index']);
 Route::get('article/create',[App2Contoller::class,'create'])->name('create');
+
+//create
+Route::post('article',[App2Contoller::class,'store']);
+
+//delete
 Route::delete('article/{id}',[App2Contoller::class,'delete']);
+
+//update
+Route::get('article/{id}/edit',[App2Contoller::class,'edit']);
 
 

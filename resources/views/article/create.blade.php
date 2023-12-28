@@ -8,11 +8,19 @@
             @csrf
             <div class="my-3">
                 <label for="">Title</label>
-                <input type="text" name="title" class="form-control">
+                <input type="text" name="title" value="{{ old('title') }}" class="form-control @error('title') is-invalid @enderror">
+                @error('title')
+                    <span class="invalid-feedback">{{ $message }}</span>
+                @enderror
+                {{-- <span class="text-danger">{{ $errors->first('title')}}</span> --}}
             </div>
             <div class="my-3">
                 <label for="">Content</label>
-                <textarea rows="3" name="content" class="form-control"></textarea>
+                <textarea rows="3" name="content" class="form-control @error('content') is-invalid @enderror">{{ old('content') }}</textarea>
+                @error('content')
+                    <span class="alert alert-danger">{{ $message }}</span>
+                @enderror               
+                {{-- <span class="text-danger">{{ $errors->first('title')}}</span> --}}
             </div>
             <button class="btn btn-sm btn-primary">Submit</button>
         </form>

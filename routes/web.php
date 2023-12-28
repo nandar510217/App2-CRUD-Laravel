@@ -51,4 +51,21 @@ Route::get('categories/{id}/edit', [CategorieController::class, 'edit']);
 Route::put('categories/{id}', [CategorieController::class, 'update']);
 
 
+//Post CRUD
+Route::get('posts', [App2Contoller::class, 'indexPost'])->name('index');
+
+//create 
+Route::get('posts/create', [App2Contoller::class, 'createPost'])->name('createForm');
+Route::post('posts', [App2Contoller::class, 'storePost'])->name('store');
+
+//edit 
+Route::get('posts/{id}/edit', [App2Contoller::class, 'editPost'])->name('edit');
+
+//update 
+Route::put('posts/{id}', [App2Contoller::class, 'updatePost'])->name('update');
+
+//destory 
+Route::delete('posts/{id}', [App2Contoller::class, 'deletePost'])->name('delete');
+
+
 
